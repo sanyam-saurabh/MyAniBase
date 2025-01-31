@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/MyAniBase/static/js/main.d7f78efa.js",
+    "index.html": "/MyAniBase/index.html",
+    "main.d7f78efa.js.map": "/MyAniBase/static/js/main.d7f78efa.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.d7f78efa.js"
+  ]
+}
