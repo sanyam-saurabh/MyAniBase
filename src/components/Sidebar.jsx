@@ -13,7 +13,7 @@ function Sidebar() {
             <h3 className="text-lg font-bold mb-4">Top 5 Popular</h3>
             <div className="flex flex-col w-40">
                 {sorted?.slice(0, 5).map((anime) => (
-                    <Link to={`/anime/${anime.mal_id}`} key={anime.mal_id} className="mt-4 flex flex-col gap-2 text-green-600">
+                    <Link to={`/anime/${anime.mal_id}`} key={anime.mal_id} className="mt-4 flex flex-col gap-2 text-green-600 transition-tranform transform hover:scale-105">
                         <img src={anime.images.jpg.large_image_url} alt="" className="w-full rounded-lg border-4 border-gray-300" />
                         <h5 className="text-sm font-semibold">{anime.title}</h5>
                     </Link>

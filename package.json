@@ -1,6 +1,5 @@
 {
   "name": "myanibase",
-  "homepage": "https://sanyam-saurabh.github.io/MyAniBase/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
