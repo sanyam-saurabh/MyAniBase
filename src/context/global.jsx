@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useReducer} from "react";
+import React, {createContext, useContext, useEffect, useReducer} from "react";
 
 const GlobalContext = createContext();
 
@@ -11,6 +11,7 @@ const GET_POPULAR_ANIME = "GET_POPULAR_ANIME";
 const GET_UPCOMING_ANIME = "GET_UPCOMING_ANIME";
 const GET_AIRING_ANIME = "GET_AIRING_ANIME";
 const GET_PICTURES = "GET_PICTURES";
+const GET_TOP_RANKED_ANIME = "GET_TOP_RANKED_ANIME";
 
 //reducer
 const reducer = (state, action) => {
@@ -27,6 +28,8 @@ const reducer = (state, action) => {
             return {...state, airingAnime: action.payload, loading: false}
         case GET_PICTURES:
             return {...state, pictures: action.payload, loading: false}
+            case GET_TOP_RANKED_ANIME:
+                return { ...state, topRankedAnime: action.payload, loading: false }
         default:
             return state;
     }
@@ -43,6 +46,7 @@ export const GlobalContextProvider = ({children}) => {
         isSearch: false,
         searchResults: [],
         loading: false,
+        topRankedAnime: [],
     }
 
     const [state, dispatch] = useReducer(reducer, intialState);
@@ -111,8 +115,18 @@ export const GlobalContextProvider = ({children}) => {
         dispatch({type: GET_PICTURES, payload: data.data})
     }
 
+    //get top ranked anime
+    const getTopRankedAnime = async () => {
+        dispatch({ type: LOADING })
+        const response = await fetch(`${baseUrl}/top/anime?limit=5`);
+        const data = await response.json();
+        // console.log("ranked anime:", data.data);
+        dispatch({ type: GET_TOP_RANKED_ANIME, payload: data.data })
+    }
+
+
     //initial render
-    React.useEffect(() => {
+    useEffect(() => {
         getPopularAnime();
     }, [])
 
@@ -126,7 +140,8 @@ export const GlobalContextProvider = ({children}) => {
             getPopularAnime,
             getUpcomingAnime,
             getAiringAnime,
-            getAnimePictures 
+            getAnimePictures,
+            getTopRankedAnime
         }}>
             {children}
         </GlobalContext.Provider>
