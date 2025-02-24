@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AnimeItem from "./components/AnimeItem";
 import Gallery from "./components/Gallery";
 import Homepage from "./components/Homepage";
+import Footer from "./components/Footer";
 
 function App() {
   
@@ -12,6 +13,7 @@ function App() {
         <Route path="/anime/:id" element={<AnimeItem/>} />
         <Route path="/character/:id" element={<Gallery/>} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }
