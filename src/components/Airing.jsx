@@ -26,15 +26,6 @@ function Airing({ rendered }) {
     };
 
     return (
-        // <div className="px-8 py-6 ">
-        //     <h1 className="text-2xl font-semibold text-gray-800">{name}</h1>
-        // <div className="flex">
-        //     <div className="mt-8 px-20 py-8 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 bg-clifford">
-        //         {conditionalRender()}
-        //     </div>
-        //     <Sidebar />
-        // </div>
-        // </div>
         <div className='px-8 py-6'>
         <h1 className="text-2xl font-semibold text-gray-800">{name}</h1>
         <div className="flex">

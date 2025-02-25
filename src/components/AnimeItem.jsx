@@ -35,18 +35,7 @@ function AnimeItem() {
             <div className="bg-clifford p-6 rounded-lg shadow-xl">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <img className="rounded-lg" src={images?.jpg.large_image_url} alt="Anime" />
-                    {/* <div className="space-y-2">
-                        <p><span className="font-semibold">Aired:</span> {aired?.string}</p>
-                        <p><span className="font-semibold">Rating:</span> {rating}</p>
-                        <p><span className="font-semibold">Rank:</span> {rank}</p>
-                        <p><span className="font-semibold">Score:</span> {score}</p>
-                        <p><span className="font-semibold">Scored By:</span> {scored_by}</p>
-                        <p><span className="font-semibold">Popularity:</span> {popularity}</p>
-                        <p><span className="font-semibold">Status:</span> {status}</p>
-                        <p><span className="font-semibold">Source:</span> {source}</p>
-                        <p><span className="font-semibold">Season:</span> {season}</p>
-                        <p><span className="font-semibold">Duration:</span> {duration}</p>
-                    </div> */}
+                    
                     <div className="grid grid-cols-2 gap-4 text-lg font-medium tracking-wide">
                         <p>
                             <span className="font-bold text-green-600">Aired:</span>
