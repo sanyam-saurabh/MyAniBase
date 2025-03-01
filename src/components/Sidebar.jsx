@@ -15,7 +15,7 @@ function Sidebar() {
     },[])
 
     return (
-        <div className="mt-8 bg-clifford pr-20 pl-8 pt-8">
+        <div className="hidden sm:block mt-8 bg-clifford pr-20 pl-8 pt-8">
             <h3 className="text-lg font-bold mb-4">Top 5 Ranked</h3>
             <div className="flex flex-col w-40">
                 {topRankedAnime.map((anime) => (
