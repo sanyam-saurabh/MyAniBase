@@ -19,9 +19,16 @@ function Popular({ rendered }) {
         const animeList = !isSearch && rendered === 'popular' ? popularAnime : searchResults
 
         return animeList?.map((anime) => (
-            <Link to={`/anime/${anime.mal_id}`} key={anime.mal_id} className="rounded-lg border-4 border-gray-300 overflow-hidden transition-transform transform hover:scale-105">
-                <img src={anime.images.jpg.large_image_url} alt="" className="w-full h-full object-cover" />
-            </Link>
+            <Link to={`/anime/${anime.mal_id}`} key={anime.mal_id} className="mt-4 flex flex-col gap-2 text-green-600 rounded-lg overflow-hidden transition-transform transform hover:scale-105">
+                                    <div className="w-full aspect-[3/4] relative">
+                                        <img
+                                            src={anime.images.jpg.large_image_url}
+                                            alt=""
+                                            className="absolute inset-0 w-full h-full object-cover border-4 border-gray-300 rounded-lg "
+                                        />
+                                    </div>
+                                    <h5 className="text-sm font-semibold">{anime.title}</h5>
+                                </Link>
         ))
     }
 
