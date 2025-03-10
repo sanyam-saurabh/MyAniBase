@@ -19,10 +19,10 @@ function Gallery() {
                     <i className="fas fa-arrow-left"></i> Back to Home
                 </Link>
             </div>
-            <div className="p-2 m-8 bg-clifford rounded-lg border-4 border-borcolor shadow-lg">
+            <div className="p-2 m-16 bg-clifford rounded-lg border-4 border-borcolor shadow-lg">
                 {pictures[index] && <img src={pictures[index]?.jpg.image_url} alt="" className="w-80 rounded" />}
             </div>
-            <div className="flex flex-wrap gap-2 w-4/5 p-4 bg-clifford border-4 border-borcolor rounded-lg shadow-md">
+            <div className="flex flex-wrap gap-2 w-4/5 p-4 bg-clifford border-4 border-borcolor rounded-lg shadow-md justify-center">
                 {pictures?.map((picture, i) => (
                     <div 
                         key={i} 
